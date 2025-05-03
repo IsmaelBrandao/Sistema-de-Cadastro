@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel de Cadastro</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="../static/js/script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Painel de Pessoas</h1>
+
+    <!-- Mensagem de feedback -->
+    <div id="mensagem" class="mensagem"></div>
+
+    <div class="painel">
+      <button id="prev" class="navegacao">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="info-pessoa destaque">
+        <p><strong>Nome:</strong> <span id="nome">-</span></p>
+        <p><strong>Data de Nascimento:</strong> <span id="nascimento">-</span></p>
+        <p><strong>CPF:</strong> <span id="cpf">-</span></p>
+      </div>
+      <button id="next" class="navegacao">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="formulario">
+      <h2>Adicionar Pessoa</h2>
+      <input type="text" id="inputNome" placeholder="Nome" />
+      <input type="date" id="inputNascimento" />
+      <input type="text" id="inputCpf" placeholder="CPF" />
+      <button id="adicionar">Adicionar</button>
+      <button id="remover">Remover Pessoa Atual</button>
+    </div>
+  </div>
+</body>
+</html>
