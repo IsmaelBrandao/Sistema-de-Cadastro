@@ -19,7 +19,6 @@ Este é um sistema simples de cadastro de pessoas desenvolvido com **HTML**, **C
   - Nome não pode conter números
 - Navegação entre os cadastros com setas esquerda e direita
 - Remoção do cadastro atual
-- Mensagens visuais de **sucesso** ou **erro** no cadastro, com feedback em verde ou vermelho
 
 ---
 
