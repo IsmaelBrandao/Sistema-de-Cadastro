@@ -32,7 +32,15 @@ class Cadastro {
     mostrarPessoa() {
         const pessoa = this.lista[this.indiceAtual];
         document.getElementById("nome").textContent = pessoa ? pessoa.nome : "-";
-        document.getElementById("nascimento").textContent = pessoa ? pessoa.nascimento : "-";
+
+        if (pessoa) {
+            const data = new Date(pessoa.nascimento);
+            const dataFormatada = data.toLocaleDateString("pt-BR");
+            document.getElementById("nascimento").textContent = dataFormatada;
+        } else {
+            document.getElementById("nascimento").textContent = "-";
+        }
+
         document.getElementById("cpf").textContent = pessoa ? pessoa.cpf : "-";
     }
 }
@@ -92,7 +100,6 @@ document.getElementById("next").addEventListener("click", () => {
     cadastro.proximaPessoa();
 });
 
-// Formatar CPF automaticamente conforme digita
 document.getElementById("inputCpf").addEventListener("input", (e) => {
     let value = e.target.value.replace(/\D/g, "");
     if (value.length > 11) value = value.slice(0, 11);
@@ -106,7 +113,6 @@ document.getElementById("inputCpf").addEventListener("input", (e) => {
     e.target.value = formatted;
 });
 
-// Função de exibir mensagens de feedback
 function exibirMensagem(texto, tipo) {
     const msgDiv = document.getElementById("mensagem");
     msgDiv.textContent = texto;
