@@ -70,6 +70,14 @@ document.getElementById("adicionar").addEventListener("click", () => {
         return;
     }
 
+    const hoje = new Date();
+    const nascimento = new Date(nascimentoInput);
+
+    if (nascimento > hoje) {
+        exibirMensagem("Data de nascimento inválida! A pessoa não pode ter nascido no futuro.", "erro");
+        return;
+    }
+
     cadastro.adicionarPessoa({
         nome: nomeInput,
         nascimento: nascimentoInput,
