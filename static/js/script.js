@@ -91,6 +91,13 @@ document.getElementById("adicionar").addEventListener("click", () => {
     document.getElementById("inputCpf").value = "";
 });
 
+document.getElementById("inputNascimento").addEventListener("input", (e) => {
+    let value = e.target.value;
+    if (value.length > 10) {
+        e.target.value = value.slice(0, 10);
+    }
+});
+
 document.getElementById("remover").addEventListener("click", () => {
     if (cadastro.lista.length === 0) {
         exibirMensagem("Nenhuma pessoa cadastrada para remover.", "erro");
